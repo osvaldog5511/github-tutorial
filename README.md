@@ -27,7 +27,7 @@ _by Osvaldo Gomez_
 10. you finished making your github account  
  
 **Creating your SSH key:**
-Once you are finish with creating your account you go click the to right profile icon and go to settings. on the left side bar go to SSH and GPG keys. go to new ssh keys and title it cloud9. After that, switch to your cloud9 tab and go to the top-right on the gear icon. Go to the SSH keys tab and copy/paste the 2nd SSH key into GitHub (private) (it starts with ssh-rsa).Add it to the SSH key, On cloud9 OPEN your workspace. You succesfully created your ssh key
+Once you are finish with creating your account you go click the to right profile icon and go to settings. On the left side bar go to SSH and GPG keys, go to new ssh keys and title it cloud9. After that, switch to your cloud9 tab and go to the top-right on the gear icon. Go to the SSH keys tab and copy/paste the 2nd SSH key into GitHub (private) (it starts with ssh-rsa).Add it to the SSH key, On cloud9 OPEN your workspace. You succesfully created your ssh key
 
 
 ---
@@ -42,14 +42,14 @@ For that we need to create a repository, by doing that we have to go to [_Github
 
 Learning about workflow and commands you need to know what status, add, commit, and push do.
 
-**Status:** to be able to use status you need to put git status. git status is a command to see which files have been edited since the last commit it will be red. git status is also a command to see which files are staged for the commit wich will make it green.
+**Git Status:** to be able to use status you need to put `git status`. Git status is a command to see which files have been edited since the last commit it will be red. Git status is also a command to see which files are staged for the commit which will make it green.
 
 
-**Add:** add can be used to add files to be able to commit and can also be able to add a directory and can add even deleted files. For example we can use git add file.txt to add the file(s) to the stage to be committed. Also, we can use git add . wich will add the current/entire directory, git add . also ill only add new and modified files it won't add anything that's been deleted or been renamed for that you will need git add file.ext
+**Git Add:** add can be used to add files to be able to commit and can also be able to add a directory and can add even deleted files. For example we can use `git add file.txt` to add the file(s) to the stage to be committed. Also, we can use `git add . `wich will add the current/entire directory, `git add .` also will only add new and modified files it won't add anything that's been deleted or been renamed for that you will need `git add --all`
 
-**Commit:**to be able to commit you will need to use git commit -m "short/specific message" wich will take a ‘snapshot’ of the files on the stage. The message should be present-tense and describe what was modified in this snapshot wich will create a HTML template.
+**Git Commit:** to be able to commit you will need to use `git commit -m "short/specific message"` which will take a ‘snapshot’ of the files on the stage. The message should be present-tense and describe what was modified in this snapshot wich will create a HTML template.
 
-**Push:** to be able to use git push -u origin master. when you push you are sending our commits from our local repo to our remote repo. The -u means “upstream.” This tells git to remember which remote repo & branch to push our changes to when we type git push in the future. Also, origin is to know which remote we are pushing to. master is the main branch of our project.
+**Git Push:** to be able to use `git push -u origin master`. When you push you are sending our commits from our local repo to our remote repo. The -u means “upstream.” This tells git to remember which remote repo & branch to push our changes to when we type `git push` in the future. Also, origin is to know which remote we are pushing to. Master is the main branch of our project.
 
 ---
 ## Rolling Back Changes
@@ -57,24 +57,24 @@ Learning about workflow and commands you need to know what status, add, commit, 
 Rolling back changes is when you undo edits, undo add, undo commit, and undo push.
 
 **undo edits:**
-- will undo evreything you edited.for example, if you added text, delete text, or change texts.
-- to be able to use undo edits you have to use git status.
-- git status will give you two hints to be able to undo edits such as (use "%%%%%%%%%%%%" to discard changes in working directory) 
+- will undo everything you edited. For example, it will delete what you added text, delete text, or change texts.
+- to be able to use undo edits you have to use `git status`.
+- git status will give you two hints to be able to undo edits such as (use `git checkout --<filename>` to discard changes in working directory) 
 - to be able to undo edits you will need to type the command that will discard your changes.
 
 **undo add:**
 - will undo the files you added
-- you must need to use git status 
-- to be able to undo add you must use the command git reset <file>, <- you put the file you added that you want to undo.
+- you must need to use `git status`
+- to be able to undo add you must use the command `git reset <file>`, <- you put the file you added that you want to undo.
 
 **undo commit:**
 - when you commit/snapshot acidently you can be able to undo the commit.
 - you can't use git status to be able to commit
 - the command that will make you able to undo commit is git reset --soft HEAD~1, and git reset --hard HEAD~1
-- git reset --soft HEAD~1 will be able to makes sure that the changes in undone revisions are preserved.
-- git reset --hard HEAD~1 you will use this if you don't want to keep these changes
+- `git reset --soft HEAD~1` will be able to makes sure that the changes in undone revisions are preserved.
+- `git reset --hard HEAD~1` you will use this if you don't want to keep these changes
 
 **undo push:**
 - to be able to undo push you will need to use git revert -m 1 <merge-commit>
--git revert -m 1 <merge-commit> will undo your commits you pushed 
+- git revert -m 1 <merge-commit> will undo your commits you pushed 
 - With ‘-m 1’ it tell git to revert to the first parent of the mergecommit on the master branch.
